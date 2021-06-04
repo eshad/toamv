@@ -1,0 +1,14 @@
+#!/bin/bash
+
+for i in {1..39}
+do
+filename=$(basename -- $i"tel.mp4")
+extension="${filename##*.}"
+filename="${filename%.*}"
+
+#echo $filename
+
+ffmpeg -i $i"tel.mp4" -qscale 1 -vcodec msmpeg4 -acodec wmav2 "$filename".wmv
+
+ffmpeg-amv -i "$filename".wmv -f amv -s 320x240 -r 16 -ac 1 -ar 22050 -qmin 3 -qmax 3 "$filename".amv && rm "$filename".wmv
+done

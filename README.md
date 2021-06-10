@@ -6,3 +6,5 @@
 <li>Use toamv to convert single file mp4 into amv</li>
 
 can use amv-ffmpeg ... -b:v 2800
+
+<h2>Thanks...</h2>
